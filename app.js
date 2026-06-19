@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const qrModal = document.getElementById('qr-modal');
     const shareQrBtn = document.getElementById('share-site-qr-btn');
     const closeQrBtn = document.getElementById('close-qr-btn');
-    const qrCodeImg = document.getElementById('qr-code-img');
+    const qrCanvas = document.getElementById('qr-canvas');
 
     // Éléments du Thème sombre / clair
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -146,7 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // -- Gestion du Modal QR Code --
     shareQrBtn.addEventListener('click', () => {
         const pageUrl = window.location.href;
-        qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(pageUrl)}`;
+        new QRious({
+            element: qrCanvas,
+            value: pageUrl,
+            size: 160
+        });
         qrModal.hidden = false;
     });
 

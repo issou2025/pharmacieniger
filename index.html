@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trouvez rapidement une pharmacie de garde ou proche à Niamey avec numéro de téléphone, adresse et itinéraire Google Maps.">
+    <title>Pharma Niamey — Pharmacies de garde à Niamey</title>
+    
+    <!-- Pré-connexion aux Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet.js pour la Carte Interactive (Légère & Open Source) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Gradient Background Elements -->
+    <div class="mesh-bg" aria-hidden="true">
+        <div class="mesh-color-1"></div>
+        <div class="mesh-color-2"></div>
+    </div>
+
+    <!-- PWA Install Banner -->
+    <div id="pwa-install-banner" class="pwa-banner" hidden>
+        <div class="pwa-banner-container">
+            <span class="pwa-banner-text">📲 Installez l'application sur votre écran d'accueil pour l'ouvrir hors-ligne</span>
+            <div class="pwa-banner-actions">
+                <button id="pwa-install-btn" class="btn btn-primary btn-sm">Installer</button>
+                <button id="pwa-close-btn" class="btn-close-banner" aria-label="Fermer">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        <path d="M12 9v6M9 12h6"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="brand-title">Pharma Niamey</span>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+                    <!-- Icone Soleil -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <!-- Icone Lune -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Mis à jour en temps réel</span>
+            </div>
+            <h1 class="hero-title">Trouvez une pharmacie de garde à <span class="gradient-text">Niamey</span></h1>
+            <p class="hero-subtitle">Accédez instantanément aux listes des pharmacies de garde et de proximité, leurs coordonnées de contact direct et itinéraires de navigation.</p>
+            
+            <!-- Recherche et Micro -->
+            <div class="search-box">
+                <label for="search-input" class="sr-only">Rechercher une pharmacie</label>
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                    <input type="search" id="search-input" placeholder="Rechercher par pharmacie, quartier (ex: Plateau, Yantala)..." autocomplete="off">
+                    
+                    <button id="voice-search-btn" class="mic-button" type="button" aria-label="Recherche vocale">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v3M8 22h8"/>
+                        </svg>
+                    </button>
+                    
+                    <button id="clear-search" class="clear-button" type="button" aria-label="Effacer la recherche" hidden>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Raccourcis quartiers populaires -->
+            <div class="quick-chips-wrapper">
+                <span class="chips-title">Quartiers :</span>
+                <div class="chips-container" id="quartier-chips">
+                    <button class="chip" data-search="Plateau">Plateau</button>
+                    <button class="chip" data-search="Yantala">Yantala</button>
+                    <button class="chip" data-search="Talladjé">Talladjé</button>
+                    <button class="chip" data-search="Wadata">Wadata</button>
+                    <button class="chip" data-search="Kirkissoye">Kirkissoye</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtres Communes & Garde & GPS -->
+        <section class="controls-panel" aria-label="Filtres et contrôles">
+            <div class="communes-scroll-container">
+                <div class="communes-chips" id="commune-chips">
+                    <button class="commune-chip active" data-commune="all">Toutes</button>
+                    <button class="commune-chip" data-commune="Commune 1">Commune 1</button>
+                    <button class="commune-chip" data-commune="Commune 2">Commune 2</button>
+                    <button class="commune-chip" data-commune="Commune 3">Commune 3</button>
+                    <button class="commune-chip" data-commune="Commune 4">Commune 4</button>
+                    <button class="commune-chip" data-commune="Commune 5">Commune 5</button>
+                </div>
+            </div>
+            
+            <div class="controls-row">
+                <!-- Toggle switch Garde -->
+                <div class="toggle-container">
+                    <span class="toggle-label">De garde uniquement</span>
+                    <label class="switch">
+                        <input type="checkbox" id="garde-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <!-- GPS bouton -->
+                <button id="gps-btn" class="btn btn-gps" title="Calculer les distances et trier par proximité">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Proximité GPS
+                </button>
+            </div>
+        </section>
+
+        <!-- Avertissement Médical Sécurisé -->
+        <section class="alert-banner" aria-labelledby="alert-title">
+            <div class="alert-pulse-icon" aria-hidden="true">⚠️</div>
+            <div class="alert-content">
+                <h2 id="alert-title" class="alert-heading">Recommandation importante</h2>
+                <p>Les tableaux de garde et horaires pouvant être modifiés au dernier moment, <strong>veuillez toujours téléphoner à la pharmacie</strong> avant de vous y déplacer.</p>
+            </div>
+        </section>
+
+        <!-- Tableau de bord analytique collapsible -->
+        <details class="dashboard-panel" id="stats-dashboard">
+            <summary class="dashboard-summary">
+                <div class="summary-left">
+                    <span class="summary-emoji">📊</span>
+                    <span>Analyse des pharmacies actives</span>
+                </div>
+                <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="dashboard-content">
+                <div class="dashboard-metric">
+                    <div class="metric-text">
+                        <span>En garde d'urgence :</span>
+                        <strong id="dash-garde-count">0</strong>
+                    </div>
+                    <div class="progress-bar-outer">
+                        <div id="dash-garde-progress" class="progress-bar-inner bar-garde" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="dashboard-metric">
+                    <div class="metric-text">
+                        <span>Ouvertes actuellement :</span>
+                        <strong id="dash-ouverte-count">0</strong>
+                    </div>
+                    <div class="progress-bar-outer">
+                        <div id="dash-ouverte-progress" class="progress-bar-inner bar-ouverte" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- CARTE INTERACTIVE LEAFLET (Affichage Cartographique) -->
+        <section class="map-container-section" aria-label="Carte des pharmacies">
+            <div class="map-header">
+                <span class="map-header-title">🗺️ Carte Interactive</span>
+                <span class="map-header-desc">Pharmacies filtrées en direct</span>
+            </div>
+            <div id="map-view" class="pharmacy-map glass-panel"></div>
+        </section>
+
+        <!-- Statistiques de Synchronisation -->
+        <section class="meta-section" aria-label="Métadonnées">
+            <div class="stats-card">
+                <div class="stats-icon-wrapper count-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-label">Affichées</span>
+                    <strong id="total-count" class="stats-value">—</strong>
+                </div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon-wrapper update-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="stats-info">
+                    <span class="stats-label">Mise à jour</span>
+                    <strong id="last-update" class="stats-value">—</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grille Dynamique -->
+        <section class="pharmacies-section" aria-label="Liste des pharmacies">
+            <!-- Loader Moderne -->
+            <div id="loading-state" class="status-msg">
+                <div class="loader-circle"></div>
+                <p class="loading-text">Recherche des dernières données en cours...</p>
+            </div>
+
+            <!-- État d'erreur -->
+            <div id="error-state" class="status-msg error-msg" hidden>
+                <div class="status-emoji">⚠️</div>
+                <h2>Connexion impossible</h2>
+                <p>Nous n'avons pas pu charger les données des pharmacies de garde. Veuillez vérifier votre connexion Internet et réessayer.</p>
+                <button onclick="window.location.reload()" class="btn btn-primary btn-retry">Recharger la page</button>
+            </div>
+
+            <!-- État de recherche infructueuse -->
+            <div id="empty-state" class="status-msg empty-msg" hidden>
+                <div class="status-emoji">🔎</div>
+                <h2>Aucune pharmacie correspondante</h2>
+                <p>Nous n'avons trouvé aucun résultat. Essayez d'utiliser des termes différents comme le nom de la commune ou un numéro.</p>
+                <button id="reset-search-btn" class="btn btn-secondary">Réinitialiser le filtre</button>
+            </div>
+
+            <!-- Grille des cartes -->
+            <div id="pharmacies-grid" class="pharmacies-grid" hidden></div>
+        </section>
+    </main>
+
+    <!-- Widget d'urgences médicales fixe -->
+    <div class="emergency-widget" id="emergency-widget">
+        <button id="emergency-toggle" class="emergency-toggle-btn" aria-label="Afficher les numéros d'urgence">
+            <span class="pulse-beacon"></span>
+            🚨 Urgences Niger
+        </button>
+        <div id="emergency-list" class="emergency-list" hidden>
+            <div class="emergency-item">
+                <span class="emergency-name">SAMU (Santé)</span>
+                <a href="tel:15" class="btn-emergency-call">📞 15</a>
+            </div>
+            <div class="emergency-item">
+                <span class="emergency-name">Sapeurs-Pompiers</span>
+                <a href="tel:18" class="btn-emergency-call">📞 18</a>
+            </div>
+            <div class="emergency-item">
+                <span class="emergency-name">Police Secours</span>
+                <a href="tel:17" class="btn-emergency-call">📞 17</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton flottant Retour en haut -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Retour en haut" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- Modal pour le QR Code de partage -->
+    <div id="qr-modal" class="modal-overlay" hidden>
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h3>Partager le site</h3>
+                <button id="close-qr-btn" class="close-modal-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Faites scanner ce code pour partager instantanément **Pharma Niamey**.</p>
+                <div class="qr-code-wrapper">
+                    <img id="qr-code-img" src="" alt="QR Code de partage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-brand">Pharma Niamey</div>
+            <p>Données publiques synchronisées de façon indépendante pour la communauté.</p>
+            <p class="footer-disclaimer">Les informations de ce site sont indicatives et ne dispensent pas d'un appel téléphonique préalable.</p>
+            <div class="footer-divider"></div>
+            
+            <!-- Actions additionnelles de partage du site -->
+            <div class="footer-site-share">
+                <button id="share-site-qr-btn" class="btn btn-secondary btn-sm">📱 Partager par QR Code</button>
+            </div>
+
+            <div class="footer-divider"></div>
+            <p class="footer-creator">Conçu et développé par <span class="creator-highlight">Issoufou Abdou</span></p>
+            <p class="footer-contact"><a href="tel:+22796380877" class="creator-phone">📞 +227 96 38 08 77</a></p>
+            <p class="footer-copyright">&copy; 2026 Pharma Niamey. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

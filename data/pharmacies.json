@@ -1,0 +1,331 @@
+{
+  "updated_at": "2026-06-20 00:37",
+  "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
+  "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
+  "pharmacies": [
+    {
+      "name": "Pharmacie Adoua",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "CSI Talladje, Commune 4",
+      "phone": "90 89 95 46",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Al Afiya",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Dan Zama Koira, Commune 2",
+      "phone": "88 99 43 43",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Banifandou",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Quartier Fada Loumbatou, Commune 4",
+      "phone": "20 34 02 40",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Belle Vue",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Quartier Tourakou, Commune 2",
+      "phone": "93 17 21 58",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Boumi",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Quartier Lazaret, Commune 2",
+      "phone": "20 32 03 40",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Chateau",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "20 75 24 02",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Collège Mariama",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Avenue de la République, Collège Mariama",
+      "phone": "20 74 19 14",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Couronne Nord",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Quartier Couronne Nord, Commune 3",
+      "phone": "20 36 46 10",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Dine",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Ryad route de Niamey Nyala, Commune 1",
+      "phone": "91 95 50 24",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Goudel",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Vers l'hôtel Les Rôniers, Goudel",
+      "phone": "80 06 53 28",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Kirkissoye",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Quartier Kirkissoye, Commune 5",
+      "phone": "88 03 16 27",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Niamey",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "91 24 97 98",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Ouverte Pr",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "93 17 21 58",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Rawda",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Hôpital de référence, Commune 1",
+      "phone": "80 89 03 13",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Rayal",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Route Ouallam, Commune 1",
+      "phone": "89 66 69 95",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Souko",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Poste de police Koubia, Commune 1",
+      "phone": "20 73 68 58",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Tawid",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Face station Sahara Petroleum, Commune 1",
+      "phone": "81 99 99 06",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Torodi",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Route Torodi, Commune 5",
+      "phone": "20 31 79 07",
+      "hours": "24h/24",
+      "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Wadata Niamey Garde",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "20 74 22 14",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Aéroport",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Zone Aéroport, Commune 4",
+      "phone": "20 34 03 49",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Chateau 8",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Rond-Point Chateau 8, Commune 1",
+      "phone": "20 75 24 02",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Concorde",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "En face Zamani Plateau, Commune 2",
+      "phone": "20 35 26 36",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Dendi",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Bassora Château Koirey, Commune 4",
+      "phone": "89 14 88 82",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Gamkalley",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Face cercle messe, Gamkalley",
+      "phone": "20 33 78 86",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Indépendance",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Quartier Balafon, Commune 3",
+      "phone": "20 33 05 06",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Lamorde",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Face CHU Lamorde, Commune 5",
+      "phone": "20 31 59 46",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Mali Bero",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "En face du village Chinois, Boulevard Mali Béro",
+      "phone": "90 58 38 01",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Malou",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Quartier Francophonie, Commune 1",
+      "phone": "20 32 02 73",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Moussi",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Rond-Point Liberté, Commune 2",
+      "phone": "96 96 43 59",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Nation",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Face Primature, Commune 1",
+      "phone": "90 20 01 47",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Niamey 2000",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Quartier Niamey 2000, Commune 4",
+      "phone": "91 24 97 98",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Saguia",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Rond-point Saguia, Commune 5",
+      "phone": "80 96 00 93",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Ténéré",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Quartier Nouveau Marché, Commune 3",
+      "phone": "20 74 28 98",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Wadata",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "Rond-Point Wadata, Commune 3",
+      "phone": "20 74 19 14",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Yantala",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "À côté de la clinique d'Iran, Yantala",
+      "phone": "20 75 24 39",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    },
+    {
+      "name": "Pharmacie Zara",
+      "city": "Niamey",
+      "status": "Ouverte",
+      "address": "À côté de l'école Barcaleyze, Commune 1",
+      "phone": "90 58 38 35",
+      "hours": "08h - 22h",
+      "source": "Annuaire"
+    }
+  ]
+}

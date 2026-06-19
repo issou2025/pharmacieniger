@@ -1,0 +1,46 @@
+name: Update Pharmacies Data
+
+on:
+  schedule:
+    # Déclenchement automatique deux fois par jour (06:00 et 18:00 UTC)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:
+    # Permet de lancer le workflow manuellement depuis l'onglet Actions sur GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-node-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run scraper
+      run: python scraper/scrape.py
+
+    - name: Commit and push if data/pharmacies.json changed
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add data/pharmacies.json
+        # Vérifier s'il y a des changements avant de committer pour éviter de faire des commits vides
+        if ! git diff --cached --quiet; then
+          git commit -m "Auto-update pharmacies list ($(date +'%Y-%m-%d %H:%M'))"
+          git push
+        else
+          echo "Aucun changement détecté dans data/pharmacies.json"
+        fi

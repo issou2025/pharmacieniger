@@ -51,6 +51,11 @@
             </div>
             
             <div class="header-actions">
+                <!-- Raccourci d'urgence en en-tête -->
+                <button id="header-emergency-btn" class="header-emergency-btn" aria-label="Appel d'urgence SAMU">
+                    🚨 Urgences <span>15</span>
+                </button>
+                
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
                     <!-- Icone Soleil -->
                     <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -116,11 +121,11 @@
             <div class="communes-scroll-container">
                 <div class="communes-chips" id="commune-chips">
                     <button class="commune-chip active" data-commune="all">Toutes</button>
-                    <button class="commune-chip" data-commune="Commune 1">Commune 1</button>
-                    <button class="commune-chip" data-commune="Commune 2">Commune 2</button>
-                    <button class="commune-chip" data-commune="Commune 3">Commune 3</button>
-                    <button class="commune-chip" data-commune="Commune 4">Commune 4</button>
-                    <button class="commune-chip" data-commune="Commune 5">Commune 5</button>
+                    <button class="commune-chip" data-commune="Commune 1">Commune 1 <span class="badge-count" id="count-c1"></span></button>
+                    <button class="commune-chip" data-commune="Commune 2">Commune 2 <span class="badge-count" id="count-c2"></span></button>
+                    <button class="commune-chip" data-commune="Commune 3">Commune 3 <span class="badge-count" id="count-c3"></span></button>
+                    <button class="commune-chip" data-commune="Commune 4">Commune 4 <span class="badge-count" id="count-c4"></span></button>
+                    <button class="commune-chip" data-commune="Commune 5">Commune 5 <span class="badge-count" id="count-c5"></span></button>
                 </div>
             </div>
             
@@ -184,7 +189,7 @@
             </div>
         </details>
 
-        <!-- CARTE INTERACTIVE LEAFLET (Affichage Cartographique) -->
+        <!-- CARTE INTERACTIVE LEAFLET -->
         <section class="map-container-section" aria-label="Carte des pharmacies">
             <div class="map-header">
                 <span class="map-header-title">🗺️ Carte Interactive</span>

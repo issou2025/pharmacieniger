@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('back-to-top');
     const emergencyToggle = document.getElementById('emergency-toggle');
     const emergencyList = document.getElementById('emergency-list');
+    const headerEmergencyBtn = document.getElementById('header-emergency-btn');
     
     // Éléments du Dashboard
     const dashGardeCount = document.getElementById('dash-garde-count');
@@ -92,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // -- Gestion du Thème (Sombre / Clair) --
-    // Mode sombre automatique s'il fait nuit (de 18h à 6h)
     const currentHour = new Date().getHours();
     const isNightTime = currentHour >= 18 || currentHour < 6;
     const savedTheme = localStorage.getItem('theme');
@@ -163,9 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // -- Initialisation de la Carte Leaflet --
     function initMap() {
         try {
-            // Centrer sur Niamey par défaut
             map = L.map('map-view', {
-                scrollWheelZoom: false, // Évite de zoomer accidentellement en scrollant
+                scrollWheelZoom: false,
                 zoomControl: true
             }).setView([13.5120, 2.1120], 12);
 
@@ -220,13 +219,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Filtre des Communes
+    // Filtre des Communes + Centrage de la carte
     communeChips.addEventListener('click', (e) => {
         const btn = e.target.closest('.commune-chip');
         if (btn) {
             const commune = btn.getAttribute('data-commune');
             setActiveCommuneChip(commune);
             applyFiltersAndRender();
+            
+            // Centrer la carte sur la commune sélectionnée
+            if (commune !== 'all' && map) {
+                const lowerCommune = commune.toLowerCase();
+                if (SECTOR_COORDS[lowerCommune]) {
+                    map.setView([SECTOR_COORDS[lowerCommune].lat, SECTOR_COORDS[lowerCommune].lon], 13.5, { animate: true });
+                }
+            }
         }
     });
 
@@ -250,6 +257,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Urgences Toggle
     emergencyToggle.addEventListener('click', () => {
         emergencyList.hidden = !emergencyList.hidden;
+    });
+
+    // Raccourci Urgence En-tête
+    headerEmergencyBtn.addEventListener('click', () => {
+        emergencyList.hidden = false;
+        emergencyList.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     // Retour en haut
@@ -375,6 +388,9 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingState.hidden = true;
             pharmaciesGrid.hidden = false;
             
+            // Initialisation des compteurs de communes dynamiques
+            updateCommuneCounts();
+            
             updateDashboardMetrics(pharmaciesData);
             applyFiltersAndRender();
         } catch (error) {
@@ -382,6 +398,16 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingState.hidden = true;
             errorState.hidden = false;
             pharmaciesGrid.hidden = true;
+        }
+    }
+
+    // Calculer et afficher les compteurs sur chaque bouton de Commune
+    function updateCommuneCounts() {
+        for (let i = 1; i <= 5; i++) {
+            const commName = `Commune ${i}`;
+            const count = pharmaciesData.filter(p => p.address && p.address.includes(commName)).length;
+            const el = document.getElementById(`count-c${i}`);
+            if (el) el.textContent = `(${count})`;
         }
     }
 
@@ -460,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // -- Mise à jour des Marqueurs Leaflet Map --
+    // -- Mise à jour des Marqueurs Leaflet Map (Custom Pins) --
     function updateMapMarkers(list) {
         if (!map || !markersLayer) return;
 
@@ -470,13 +496,23 @@ document.addEventListener('DOMContentLoaded', () => {
         list.forEach(pharma => {
             const coords = getCoordsForPharmacy(pharma);
             
-            // Ajouter un léger décalage aléatoire (Jitter) pour éviter la superposition exacte des points du même secteur
             const jitterLat = (Math.random() - 0.5) * 0.002;
             const jitterLon = (Math.random() - 0.5) * 0.002;
             const markerLat = coords.lat + jitterLat;
             const markerLon = coords.lon + jitterLon;
 
-            const marker = L.marker([markerLat, markerLon]);
+            const statusClass = (pharma.status || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            // Rendu de l'aiguille de pin médicale personnalisée en HTML/CSS
+            const customIcon = L.divIcon({
+                html: `<div class="custom-map-pin ${statusClass}" title="${escapeHtml(pharma.name)}"></div>`,
+                className: 'custom-pin-container',
+                iconSize: [30, 30],
+                iconAnchor: [15, 30],
+                popupAnchor: [0, -28]
+            });
+
+            const marker = L.marker([markerLat, markerLon], { icon: customIcon });
             
             const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${pharma.name}, ${pharma.address}, Niamey`)}`;
             const popupContent = `
@@ -484,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="map-popup-text"><strong>Adresse:</strong> ${escapeHtml(pharma.address)}</div>
                 ${pharma.phone ? `<div class="map-popup-text"><strong>Tél:</strong> ${escapeHtml(pharma.phone)}</div>` : ''}
                 <div style="margin-top: 0.5rem;">
-                    <span class="status-badge ${escapeHtml(pharma.status || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}" style="padding: 0.15rem 0.45rem; font-size: 0.65rem;">
+                    <span class="status-badge ${statusClass}" style="padding: 0.15rem 0.45rem; font-size: 0.65rem;">
                         ${escapeHtml(pharma.status)}
                     </span>
                 </div>
@@ -514,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bounds.extend([userCoords.lat, userCoords.lon]);
         }
 
-        // Ajuster le niveau de zoom de la carte pour afficher tous les points
+        // Ajuster le niveau de zoom
         if (list.length > 0) {
             map.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
         }

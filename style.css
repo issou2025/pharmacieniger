@@ -212,7 +212,56 @@ body {
     letter-spacing: -0.02em;
 }
 
-/* Boutons d'actions header (Theme toggle) */
+/* Boutons d'actions header (Theme toggle & Urgence) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-emergency-btn {
+    background-color: rgba(239, 68, 68, 0.08);
+    border: 1.5px solid #ef4444;
+    color: #ef4444;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: flash-border 1.5s infinite alternate;
+}
+
+.header-emergency-btn:hover {
+    background-color: #ef4444;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.header-emergency-btn span {
+    background-color: #ef4444;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.header-emergency-btn:hover span {
+    background-color: white;
+    color: #ef4444;
+}
+
+@keyframes flash-border {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.2); }
+    100% { box-shadow: 0 0 8px 4px rgba(239, 68, 68, 0.1); }
+}
+
 .theme-toggle-btn {
     background: var(--bg-secondary);
     border: 1px solid var(--border-glass);
@@ -548,6 +597,9 @@ body {
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
 }
 
 .commune-chip:hover {
@@ -560,6 +612,21 @@ body {
     border-color: var(--primary);
     color: var(--bg-secondary);
     box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+/* Petit indicateur de compteur sur les puces */
+.badge-count {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-body);
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.commune-chip.active .badge-count {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 /* Range contrôles (Garde + GPS) */
@@ -864,6 +931,52 @@ details[open] .chevron-icon {
     background-color: var(--primary);
     border-radius: 6px;
     text-align: center;
+}
+
+/* Personnalisation Aiguilles de Pins sur la Carte */
+.custom-pin-container {
+    background: none;
+    border: none;
+}
+
+.custom-map-pin {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: var(--shadow-sm);
+}
+
+.custom-map-pin::after {
+    content: '+';
+    transform: rotate(45deg);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.custom-map-pin.garde {
+    background-color: #ef4444;
+    animation: marker-pulse-red 1.2s infinite alternate;
+}
+
+.custom-map-pin.ouverte {
+    background-color: #10b981;
+}
+
+.custom-map-pin.info {
+    background-color: #64748b;
+}
+
+@keyframes marker-pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    100% { box-shadow: 0 0 10px 4px rgba(239, 68, 68, 0.2); }
 }
 
 /* Métadonnées & Statistiques */

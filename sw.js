@@ -1,10 +1,9 @@
-const CACHE_NAME = 'pharma-niamey-v2';
+const CACHE_NAME = 'pharma-niamey-v3';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './app.js',
-  './qrious.min.js',
   './data/pharmacies.json'
 ];
 

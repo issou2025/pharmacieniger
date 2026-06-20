@@ -1,6 +1,6 @@
 /**
  * Pharma Niamey - Script d'application principal (JavaScript Vanilla)
- * Intègre Leaflet Map, QR Code modal, PWA Install prompt et 15+ fonctions.
+ * Intègre Leaflet Map, PWA Install prompt et 15+ fonctions.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,12 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pwaInstallBtn = document.getElementById('pwa-install-btn');
     const pwaCloseBtn = document.getElementById('pwa-close-btn');
     let deferredPrompt = null;
-
-    // QR Code modal elements
-    const qrModal = document.getElementById('qr-modal');
-    const shareQrBtn = document.getElementById('share-site-qr-btn');
-    const closeQrBtn = document.getElementById('close-qr-btn');
-    const qrCanvas = document.getElementById('qr-canvas');
 
     // Éléments du Thème sombre / clair
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -141,27 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pwaCloseBtn.addEventListener('click', () => {
         pwaBanner.hidden = true;
-    });
-
-    // -- Gestion du Modal QR Code --
-    shareQrBtn.addEventListener('click', () => {
-        const pageUrl = window.location.href;
-        new QRious({
-            element: qrCanvas,
-            value: pageUrl,
-            size: 160
-        });
-        qrModal.hidden = false;
-    });
-
-    closeQrBtn.addEventListener('click', () => {
-        qrModal.hidden = true;
-    });
-
-    qrModal.addEventListener('click', (e) => {
-        if (e.target === qrModal) {
-            qrModal.hidden = true;
-        }
     });
 
     // -- Initialisation de la Carte Leaflet --

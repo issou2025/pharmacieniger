@@ -282,34 +282,11 @@
         </svg>
     </button>
 
-    <!-- Modal pour le QR Code de partage -->
-    <div id="qr-modal" class="modal-overlay" hidden>
-        <div class="modal-content glass-panel">
-            <div class="modal-header">
-                <h3>Partager le site</h3>
-                <button id="close-qr-btn" class="close-modal-btn">✕</button>
-            </div>
-            <div class="modal-body">
-                <p>Faites scanner ce code pour partager instantanément **Pharma Niamey**.</p>
-                <div class="qr-code-wrapper">
-                    <canvas id="qr-canvas"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer class="app-footer">
         <div class="footer-content">
             <div class="footer-brand">Pharma Niamey</div>
             <p>Données publiques synchronisées de façon indépendante pour la communauté.</p>
             <p class="footer-disclaimer">Les informations de ce site sont indicatives et ne dispensent pas d'un appel téléphonique préalable.</p>
-            <div class="footer-divider"></div>
-            
-            <!-- Actions additionnelles de partage du site -->
-            <div class="footer-site-share">
-                <button id="share-site-qr-btn" class="btn btn-secondary btn-sm">📱 Partager par QR Code</button>
-            </div>
-
             <div class="footer-divider"></div>
             <p class="footer-creator">Conçu et développé par <span class="creator-highlight">Issoufou Abdou</span></p>
             <p class="footer-contact"><a href="tel:+22796380877" class="creator-phone">📞 +227 96 38 08 77</a></p>
@@ -317,7 +294,6 @@
         </div>
     </footer>
 
-    <script src="qrious.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20 07:20",
+  "updated_at": "2026-06-20 18:30",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -49,15 +49,6 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Chateau",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "20 75 24 02",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
       "name": "Pharmacie Collège Mariama",
       "city": "Niamey",
       "status": "Garde",
@@ -74,6 +65,15 @@
       "phone": "20 36 46 10",
       "hours": "24h/24",
       "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie De L",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "96 96 75 82",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Dine",
@@ -103,11 +103,11 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Niamey",
+      "name": "Pharmacie Nouveau March",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "91 24 97 98",
+      "phone": "20 74 14 81",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -116,7 +116,7 @@
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "93 17 21 58",
+      "phone": "20 75 27 90",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -137,6 +137,15 @@
       "phone": "89 66 69 95",
       "hours": "24h/24",
       "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Route Filingu",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "23 90 37 30",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Souko",
@@ -164,15 +173,6 @@
       "phone": "20 31 79 07",
       "hours": "24h/24",
       "source": "Liste Officielle"
-    },
-    {
-      "name": "Pharmacie Wadata Niamey Garde",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "20 74 22 14",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Aéroport",

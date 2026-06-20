@@ -120,6 +120,22 @@ body {
     overflow-x: hidden;
 }
 
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-glass);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -450,11 +466,13 @@ body {
 
 .search-input-wrapper input[type="search"] {
     width: 100%;
-    padding: 1.15rem 3.25rem 1.15rem 3.25rem;
+    padding: 1.15rem 3.25rem;
     font-size: 1.05rem;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: var(--text-title);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1.5px solid var(--border-glass);
     border-radius: 16px;
     transition: all 0.3s ease;
@@ -468,7 +486,8 @@ body {
 
 .search-input-wrapper input[type="search"]:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 5px var(--primary-glow);
+    box-shadow: 0 0 0 4px var(--primary-glow), var(--shadow-md);
+    background-color: var(--bg-secondary);
 }
 
 .search-input-wrapper input[type="search"]:focus + .search-icon {
@@ -1163,15 +1182,15 @@ details[open] .chevron-icon {
 /* Cartes des pharmacies (Style Glassmorphism) */
 .pharmacy-card {
     background-color: var(--bg-glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid var(--border-glass);
-    border-radius: 20px;
-    padding: 1.5rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid var(--border-glass);
+    border-radius: 24px;
+    padding: 1.6rem;
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -1183,13 +1202,13 @@ details[open] .chevron-icon {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
 }
 
 .pharmacy-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), 0 15px 30px var(--primary-glow);
     border-color: var(--primary);
 }
 
@@ -1198,25 +1217,32 @@ details[open] .chevron-icon {
     position: absolute;
     top: 1.25rem;
     right: 1.25rem;
-    background: none;
-    border: none;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-glass);
     cursor: pointer;
-    color: #cbd5e1;
+    color: var(--text-muted);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     z-index: 10;
-    padding: 0.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .btn-fav:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .btn-fav.active {
     color: #eab308;
-    filter: drop-shadow(0 0 4px rgba(234, 179, 8, 0.4));
+    background-color: var(--bg-secondary);
+    border-color: #fef08a;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.2);
 }
 
 /* Entête de la carte */
@@ -1377,27 +1403,29 @@ details[open] .chevron-icon {
 }
 
 .btn-call {
-    background-color: var(--primary-light);
-    color: var(--primary);
-    border: 1px solid var(--primary-border);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: var(--bg-secondary) !important;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 4px 10px var(--primary-glow);
 }
 
 .btn-call:hover {
-    background-color: var(--primary);
-    color: var(--bg-secondary);
-    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--primary-glow);
 }
 
 .btn-route {
-    background-color: var(--blue-route-bg);
-    color: var(--blue-route-text);
-    border: 1px solid var(--blue-route-border);
+    background: linear-gradient(135deg, var(--blue-route-text) 0%, var(--blue-route-hover) 100%);
+    color: white !important;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .btn-route:hover {
-    background-color: var(--blue-route-text);
-    color: white;
-    border-color: var(--blue-route-text);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
 }
 
 /* Actions secondaires de la carte */
@@ -1454,10 +1482,17 @@ details[open] .chevron-icon {
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    animation: emergency-pulse 2s infinite;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+@keyframes emergency-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
     transition: all 0.2s ease;
 }
 

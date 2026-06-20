@@ -151,6 +151,7 @@ body {
     height: 60vw;
     background: var(--mesh-1);
     filter: blur(80px);
+    animation: float-mesh-1 25s infinite ease-in-out;
 }
 
 .mesh-color-2 {
@@ -161,6 +162,19 @@ body {
     height: 70vw;
     background: var(--mesh-2);
     filter: blur(100px);
+    animation: float-mesh-2 30s infinite ease-in-out;
+}
+
+@keyframes float-mesh-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(8vw, 8vh) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float-mesh-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-8vw, -8vh) scale(1.15); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 /* Conteneur global */
@@ -1577,15 +1591,27 @@ details[open] .chevron-icon {
     margin: 0.25rem 0;
 }
 
-.footer-creator {
-    font-size: 0.9rem;
-    color: var(--text-body);
-    margin-top: 0.25rem;
-}
-
-.creator-highlight {
+.creator-link {
     color: var(--primary);
     font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    padding: 0.1rem 0.4rem;
+    border-radius: 6px;
+    background-color: var(--primary-light);
+    border: 1px solid var(--primary-border);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.creator-link:hover {
+    background-color: var(--primary);
+    color: var(--bg-secondary) !important;
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--primary-glow);
 }
 
 .creator-phone {

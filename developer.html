@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez le profil d'Issoufou Abdou, développeur logiciel et web à Niamey, Niger. Concepteur de Pharma Niamey.">
+    <title>Issoufou Abdou — Développeur de Pharma Niamey</title>
+    
+    <!-- Pré-connexion aux Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css?v=2.0">
+    <style>
+        /* Styles spécifiques de la Page Développeur Premium */
+        .dev-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0;
+            gap: 2.5rem;
+            animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-body);
+            background-color: var(--bg-glass);
+            border: 1.5px solid var(--border-glass);
+            padding: 0.6rem 1.2rem;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            margin-right: auto;
+        }
+
+        .btn-back:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateX(-4px);
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        .dev-profile-card {
+            width: 100%;
+            background-color: var(--bg-glass);
+            border: 1.5px solid var(--border-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .dev-profile-card {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            .dev-avatar-wrapper {
+                margin: 0 auto;
+            }
+            .btn-back {
+                margin: 0 auto 1rem auto;
+            }
+        }
+
+        .dev-avatar-wrapper {
+            width: 250px;
+            height: 250px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
+            padding: 4px;
+            box-shadow: 0 8px 30px var(--primary-glow);
+            position: relative;
+        }
+
+        .dev-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .dev-badge-active {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--status-ouverte-text);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            white-space: nowrap;
+        }
+
+        .dev-details h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            color: var(--text-title);
+            margin-bottom: 0.25rem;
+        }
+
+        .dev-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .dev-meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dev-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-glass);
+            padding: 0.35rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .dev-bio {
+            font-size: 0.98rem;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .dev-bio p {
+            margin-bottom: 1rem;
+        }
+
+        .dev-skills-section {
+            margin-top: 1.5rem;
+        }
+
+        .dev-section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-title);
+            margin-bottom: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dev-skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .dev-skill-chip {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-glass);
+            color: var(--text-body);
+            padding: 0.45rem 0.9rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .dev-skill-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--primary-glow);
+        }
+
+        .dev-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.25rem;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+        }
+        
+        .btn-whatsapp:hover {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-phone {
+            background-color: var(--primary);
+            color: var(--bg-secondary) !important;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+        
+        .btn-phone:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 6px 20px var(--primary-glow);
+        }
+
+        .btn-github {
+            background-color: #24292e;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(36, 41, 46, 0.2);
+        }
+
+        .btn-github:hover {
+            background-color: #1a1e22;
+            box-shadow: 0 6px 20px rgba(36, 41, 46, 0.35);
+        }
+
+        /* En-tête de retour */
+        .dev-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .showcase-section {
+            width: 100%;
+            background-color: var(--bg-glass);
+            border: 1.5px solid var(--border-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: var(--text-title);
+        }
+
+        .project-badge {
+            font-size: 0.75rem;
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gradient Background Elements -->
+    <div class="mesh-bg" aria-hidden="true">
+        <div class="mesh-color-1"></div>
+        <div class="mesh-color-2"></div>
+    </div>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <a href="./" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <div class="brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                            <path d="M12 9v6M9 12h6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="brand-title">Pharma Niamey</span>
+                    </div>
+                </a>
+            </div>
+            
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème">
+                <!-- Icone Soleil -->
+                <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                </svg>
+                <!-- Icone Lune -->
+                <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="dev-wrapper">
+            
+            <div class="dev-header">
+                <a href="./" class="btn-back">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+                    </svg>
+                    Retour à la recherche
+                </a>
+            </div>
+
+            <!-- Carte de Profil principale -->
+            <section class="dev-profile-card">
+                <div class="dev-avatar-wrapper">
+                    <div class="dev-avatar-inner">
+                        <!-- SVG Avatar moderne de développeur -->
+                        <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="avatarGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.2" />
+                                    <stop offset="100%" stop-color="var(--primary)" stop-opacity="0" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="100%" height="100%" fill="var(--bg-secondary)"/>
+                            <circle cx="100" cy="100" r="85" fill="url(#avatarGlow)" />
+                            
+                            <!-- Éléments de code en arrière-plan -->
+                            <text x="35" y="65" font-family="'Space Grotesk', monospace" font-size="16" fill="var(--primary)" font-weight="bold" opacity="0.3">&lt;/&gt;</text>
+                            <text x="145" y="80" font-family="'Space Grotesk', monospace" font-size="14" fill="var(--primary)" font-weight="bold" opacity="0.3">{ ; }</text>
+                            
+                            <!-- Silhouette du Développeur -->
+                            <!-- Corps -->
+                            <path d="M50 165 C 50 135, 70 120, 100 120 C 130 120, 150 135, 150 165" fill="var(--text-body)" opacity="0.85"/>
+                            <path d="M85 120 L85 105 L115 105 L115 120 Z" fill="var(--text-body)"/>
+                            <!-- Tête -->
+                            <circle cx="100" cy="80" r="30" fill="var(--text-body)"/>
+                            <!-- Lunettes et Casque Audio (Tech Accent) -->
+                            <path d="M62 80 C 62 45, 138 45, 138 80" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+                            <rect x="58" y="70" width="10" height="20" rx="4" fill="var(--primary)"/>
+                            <rect x="132" y="70" width="10" height="20" rx="4" fill="var(--primary)"/>
+                            <circle cx="85" cy="80" r="10" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                            <circle cx="115" cy="80" r="10" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                            <line x1="95" y1="80" x2="105" y2="80" stroke="var(--primary)" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <div class="dev-badge-active">✨ DISPONIBLE POUR PROJETS</div>
+                </div>
+
+                <div class="dev-details">
+                    <h1>Issoufou Abdou</h1>
+                    <div class="dev-title">Ingénieur Logiciel & Concepteur de Solutions Web</div>
+                    
+                    <div class="dev-meta-info">
+                        <div class="dev-meta-item">
+                            <span>📍</span> Niamey, Niger
+                        </div>
+                        <div class="dev-meta-item">
+                            <span>💼</span> Freelance / Consultant
+                        </div>
+                        <div class="dev-meta-item">
+                            <span>🚀</span> Projets Communautaires
+                        </div>
+                    </div>
+
+                    <div class="dev-bio">
+                        <p>Passionné par les technologies modernes et l'innovation numérique au Niger, je conçois des solutions logicielles sur mesure, performantes et accessibles pour relever les défis locaux.</p>
+                        <p>À travers **Pharma Niamey**, mon objectif a été de concevoir une application ultra-rapide, fonctionnelle 100% hors-ligne (PWA) et libre de droits, pour aider les habitants de Niamey à trouver rapidement l'aide médicale urgente dont ils ont besoin, de jour comme de nuit.</p>
+                    </div>
+
+                    <div class="dev-skills-section">
+                        <div class="dev-section-title">
+                            <span>🛠️</span> Compétences clés
+                        </div>
+                        <div class="dev-skills-grid">
+                            <span class="dev-skill-chip">JavaScript Vanilla (ES6+)</span>
+                            <span class="dev-skill-chip">HTML5 & CSS3 Premium</span>
+                            <span class="dev-skill-chip">Python & Scraping Avancé</span>
+                            <span class="dev-skill-chip">Progressive Web Apps (PWA)</span>
+                            <span class="dev-skill-chip">Cartographie Leaflet.js</span>
+                            <span class="dev-skill-chip">Git & CI/CD Actions</span>
+                            <span class="dev-skill-chip">Optimisation de Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vitrine Projet -->
+            <section class="showcase-section">
+                <div class="dev-section-title">
+                    <span>💡</span> Réalisation en Vedette
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pharma Niamey</h3>
+                        <span class="project-badge">Open Source</span>
+                    </div>
+                    <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin-bottom: 0.75rem;">
+                        Un localisateur de pharmacies et d'officines de garde fonctionnant sans base de données SQL lourde ni framework JavaScript complexe. L'application extrait dynamiquement et met à jour automatiquement les données deux fois par jour via un script de scraping automatisé par GitHub Actions, le tout servi instantanément depuis GitHub Pages.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Actions de Contact Direct -->
+            <section style="width: 100%; text-align: center;">
+                <div class="dev-section-title" style="justify-content: center; margin-bottom: 1.5rem;">
+                    <span>📬</span> Travaillons ensemble !
+                </div>
+                <div class="dev-contact-grid">
+                    <a href="tel:+22796380877" class="btn-contact btn-phone">
+                        📞 Appeler Directement
+                    </a>
+                    <a href="https://wa.me/22796380877?text=Bonjour%20Issoufou,%20j'ai%20vu%20votre%20profil%20sur%20Pharma%20Niamey." target="_blank" rel="noopener" class="btn-contact btn-whatsapp">
+                        💬 Discuter sur WhatsApp
+                    </a>
+                    <a href="https://github.com/issou2025" target="_blank" rel="noopener" class="btn-contact btn-github">
+                        💻 Suivre sur GitHub
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-brand">Pharma Niamey</div>
+            <p class="footer-copyright">&copy; 2026 Pharma Niamey. Conçu avec passion à Niamey, Niger.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script inline pour la gestion synchrone du thème
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const sunIcon = themeToggleBtn.querySelector('.sun-icon');
+            const moonIcon = themeToggleBtn.querySelector('.moon-icon');
+            const htmlElement = document.documentElement;
+
+            // Lire le thème dans le localStorage
+            const savedTheme = localStorage.getItem('theme');
+            
+            // Si pas de thème stocké, appliquer selon l'heure (mode nuit auto)
+            const currentHour = new Date().getHours();
+            const isNightTime = currentHour >= 18 || currentHour < 6;
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (isNightTime ? 'dark' : (systemPrefersDark ? 'dark' : 'light'));
+
+            setTheme(initialTheme);
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            function setTheme(theme) {
+                htmlElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                if (theme === 'dark') {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                } else {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

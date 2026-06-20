@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pharma-niamey-v4';
+const CACHE_NAME = 'pharma-niamey-v5';
 const ASSETS = [
   './',
   './index.html',

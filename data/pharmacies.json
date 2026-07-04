@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04 07:00",
+  "updated_at": "2026-07-04 18:21",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -49,6 +49,24 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Carrefour",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "20 73 47 90",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Centre A",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "80 06 61 58",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Collège Mariama",
       "city": "Niamey",
       "status": "Garde",
@@ -76,6 +94,15 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Escadrille Niamey Garde",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "92 80 76 23",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Goudel",
       "city": "Niamey",
       "status": "Garde",
@@ -94,11 +121,11 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie La R",
+      "name": "Pharmacie Niamey",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "91 48 75 03",
+      "phone": "91 24 97 98",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -107,7 +134,16 @@
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "91 37 63 87",
+      "phone": "28 35 18 18",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Pharmacie Ceg",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "25 80 68 68",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },

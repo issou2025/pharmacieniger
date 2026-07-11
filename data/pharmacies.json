@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11 06:45",
+  "updated_at": "2026-07-11 18:18",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -119,15 +119,6 @@
       "phone": "88 03 16 27",
       "hours": "24h/24",
       "source": "Liste Officielle"
-    },
-    {
-      "name": "Pharmacie Niamey",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "91 24 97 98",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Ouverte Pr",

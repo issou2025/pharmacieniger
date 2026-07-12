@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12 06:53",
+  "updated_at": "2026-07-12 18:18",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -49,20 +49,20 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Carrefour",
+      "name": "Pharmacie Chateau",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "20 73 47 90",
+      "phone": "20 75 24 02",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
     {
-      "name": "Pharmacie Centre A",
+      "name": "Pharmacie Cité Progr",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "80 06 61 58",
+      "phone": "89 38 28 07",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -94,15 +94,6 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Escadrille Niamey Garde",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "92 80 76 23",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
       "name": "Pharmacie Goudel",
       "city": "Niamey",
       "status": "Garde",
@@ -125,16 +116,7 @@
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "28 35 18 18",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
-      "name": "Pharmacie Pharmacie Ceg",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "25 80 68 68",
+      "phone": "93 17 21 58",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -182,6 +164,15 @@
       "phone": "20 31 79 07",
       "hours": "24h/24",
       "source": "Liste Officielle"
+    },
+    {
+      "name": "Pharmacie Wadata Niamey Garde",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "20 74 22 14",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Aéroport",

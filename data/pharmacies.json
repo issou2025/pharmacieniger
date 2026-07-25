@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25 06:46",
+  "updated_at": "2026-07-25 18:17",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -67,15 +67,6 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie De L",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "96 96 75 82",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
       "name": "Pharmacie Dine",
       "city": "Niamey",
       "status": "Garde",
@@ -94,6 +85,15 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Grande Mosqu",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "88 88 30 88",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Kirkissoye",
       "city": "Niamey",
       "status": "Garde",
@@ -103,11 +103,11 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Nouveau March",
+      "name": "Pharmacie Niamey",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "20 74 14 81",
+      "phone": "91 24 97 98",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -116,7 +116,16 @@
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "20 75 27 90",
+      "phone": "20 73 68 58",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Plateau",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "80 90 97 60",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -137,15 +146,6 @@
       "phone": "89 66 69 95",
       "hours": "24h/24",
       "source": "Liste Officielle"
-    },
-    {
-      "name": "Pharmacie Route Filingu",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "23 90 37 30",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Souko",

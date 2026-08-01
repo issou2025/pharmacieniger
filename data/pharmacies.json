@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01 08:10",
+  "updated_at": "2026-08-01 18:59",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -49,6 +49,24 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Carrefour",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "20 73 47 90",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Centre A",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "80 06 61 58",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Collège Mariama",
       "city": "Niamey",
       "status": "Garde",
@@ -76,6 +94,15 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Escadrille Niamey Garde",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "92 80 76 23",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Goudel",
       "city": "Niamey",
       "status": "Garde",
@@ -85,11 +112,11 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Grande Mosqu",
+      "name": "Pharmacie Kalley",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "88 88 30 88",
+      "phone": "96 24 25 04",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -103,29 +130,20 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Niamey",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "91 24 97 98",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
       "name": "Pharmacie Ouverte Pr",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "20 73 68 58",
+      "phone": "28 35 18 18",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
     {
-      "name": "Pharmacie Plateau",
+      "name": "Pharmacie Pharmacie Ceg",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "80 90 97 60",
+      "phone": "25 80 68 68",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },

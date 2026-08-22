@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22 06:29",
+  "updated_at": "2026-08-22 18:20",
   "source": "Données publiques (pharmaniger.com & 2424pharmaniger.com)",
   "warning": "Appelez toujours la pharmacie avant de vous déplacer. Les horaires et tours de garde peuvent changer.",
   "pharmacies": [
@@ -49,6 +49,15 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Ceg",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "92 43 64 41",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Collège Mariama",
       "city": "Niamey",
       "status": "Garde",
@@ -65,15 +74,6 @@
       "phone": "20 36 46 10",
       "hours": "24h/24",
       "source": "Liste Officielle"
-    },
-    {
-      "name": "Pharmacie De L",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "96 96 75 82",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
     },
     {
       "name": "Pharmacie Dine",
@@ -94,6 +94,15 @@
       "source": "Liste Officielle"
     },
     {
+      "name": "Pharmacie Grande Mosqu",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "88 88 30 88",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
       "name": "Pharmacie Kirkissoye",
       "city": "Niamey",
       "status": "Garde",
@@ -103,29 +112,20 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Niamey",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "91 24 97 98",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
-      "name": "Pharmacie Nouveau March",
-      "city": "Niamey",
-      "status": "Garde",
-      "address": "Niamey, Niger",
-      "phone": "20 74 14 81",
-      "hours": "24h/24",
-      "source": "2424pharmaniger.com"
-    },
-    {
       "name": "Pharmacie Ouverte Pr",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "20 75 27 90",
+      "phone": "20 73 68 58",
+      "hours": "24h/24",
+      "source": "2424pharmaniger.com"
+    },
+    {
+      "name": "Pharmacie Plateau",
+      "city": "Niamey",
+      "status": "Garde",
+      "address": "Niamey, Niger",
+      "phone": "80 90 97 60",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
@@ -148,11 +148,11 @@
       "source": "Liste Officielle"
     },
     {
-      "name": "Pharmacie Route Filingu",
+      "name": "Pharmacie Shifa'A",
       "city": "Niamey",
       "status": "Garde",
       "address": "Niamey, Niger",
-      "phone": "23 90 37 30",
+      "phone": "81 77 42 52",
       "hours": "24h/24",
       "source": "2424pharmaniger.com"
     },
